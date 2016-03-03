@@ -3,7 +3,7 @@ import os
 import jinja2
 import webapp2
 import datetime
-
+from pytz.gae import pytz
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
@@ -30,8 +30,8 @@ class BaseHandler(webapp2.RequestHandler):
 
 class MainHandler(BaseHandler):
     def get(self):
-        local_time = datetime.datetime.now() + datetime.timedelta(hours=1)
-        params = {"current_time": local_time.strftime('%H:%M:%S')}
+        tz = pytz.timezone('Europe/Ljubljana')
+        params = {"current_time": datetime.datetime.now(tz).strftime('%H:%M:%S')}
         return self.render_template("current_time.html", params=params)
 
 
