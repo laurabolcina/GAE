@@ -8,14 +8,12 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <form method="post" action="/result">
-        Number 1: <br>
-        <input name="no1"><br><br>
-        Number 2: <br>
-        <input name="no2"><br><br>
-        Operator (+, -, *, /): <br>
-        <input name="operator"><br><br>
+    <form method="post" action="/">
+        Number 1: <input name="no1"><br><br>
+        Number 2: <input name="no2"><br><br>
+        Operator (+, -, *, /): <input name="operator"><br><br>
         <button type="submit">Calculate!</button>
+        <p>Result: {{ result }}</p>
     </form>
 </body>
 </html>

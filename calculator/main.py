@@ -31,15 +31,16 @@ class MainHandler(BaseHandler):
     def get(self):
         return self.render_template("index.html")
 
-class ResultHandler(BaseHandler):
     def post(self):
         x = self.request.get("no1")
         y = self.request.get("no2")
         oper = self.request.get("operator")
         result = calculate(x, y, oper)
-        self.write(result)
+
+        params = {"result": result}
+        return self.render_template("index.html", params=params)
+
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
-    webapp2.Route('/result', ResultHandler),
 ], debug=True)
