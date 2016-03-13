@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Guess a Secret Number</title>
 
@@ -12,6 +12,21 @@
     <form method="post" action="/">
         <input name="guess"><br><br>
         <button type="submit">Guess</button>
+
+        <div>
+            {% if result == 0 %}
+                <p>You did not enter any number. Try again.</p>
+            {% elif result == 2 %}
+                <p>Your number is too high. Try with a number below 300.</p>
+            {% elif result == 3 %}
+                <p>Very close, but not enough. Try again!</p>
+            {% elif result == 4 %}
+                <p>Very, very close! Try again!</p>
+            {% elif result == 5 %}
+                <p>Your number is too low. Try with a number above 250.</p>
+            {% endif %}
+        </div>
+
     </form>
 
 </body>

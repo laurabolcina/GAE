@@ -34,9 +34,20 @@ class MainHandler(BaseHandler):
 
     def post(self):
         n = self.request.get("guess")
-        message = secret_n_guess(n)
-        self.write(message)
+        answer = secret_n_guess(n)
+
+        if answer == 1:
+            return self.redirect_to("guessed")
+
+        params = {"result": answer}
+        return self.render_template("index.html", params)
+
+class GuessedHandler(BaseHandler):
+    def get(self):
+        return self.render_template("guessed.html")
+
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+    webapp2.Route('/guessed', GuessedHandler, name="guessed"),
 ], debug=True)
