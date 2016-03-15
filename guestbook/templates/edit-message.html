@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filton's GuestBook | Edit Message</title>
+</head>
+<body>
+    <a href="/message/{{guest_post.key.id()}}">Back</a>
+    <br>
+    <h1>Edit Message</h1>
+    <form action="/message/{{guest_post.key.id()}}/edit" method="post">
+        <textarea name="message" placeholder="{{ guest_post.message }}"></textarea>
+        <button type="submit">OK</button>
+    </form>
+</body>
+</html>

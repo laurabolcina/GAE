@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filton's GuestBook | GuestBook Message</title>
+</head>
+<body>
+    <a href="/">Back</a>
+    <br>
+    <h1>Message details</h1>
+    <p>Message ID: {{ guest_post.key.id() }}</p>
+    <p>Name: {{ guest_post.name }} {{ guest_post.surname }}</p>
+    <p>Email: {{ guest_post.email }}</p>
+    <p>Message: {{ guest_post.message }}</p>
+    <p>Created: {{ guest_post.created }}</p>
+    <a href="/message/{{ guest_post.key.id() }}/edit" method="post">Edit</a>
+    <a href="/message/{{ guest_post.key.id() }}/delete" method="post">Delete</a>
+</body>
+</html>

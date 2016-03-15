@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filton's GuestBook | Delete Message</title>
+</head>
+<body>
+    <a href="/message/{{ guest_post.key.id() }}">Back</a>
+    <br>
+    <h1>Do you really want to delete this message?</h1>
+
+    <form action="/message/{{ guest_post.key.id() }}/delete" method="post">
+
+        <button type="submit">Yes, delete</button>
+
+    </form>
+</body>
+</html>

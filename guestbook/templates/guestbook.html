@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filton's GuestBook | GuestBook</title>
+</head>
+<body>
+    <a href="/">Back</a>
+    <br>
+    <h1>GuestBook</h1>
+
+    <table>
+        {% for guest_post in messages %}
+            <tr>
+                <td>
+                    {{ guest_post.created }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ guest_post.name }} {{ guest_post.surname }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ guest_post.message }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/message/{{ guest_post.key.id() }}">Details</a><br><br>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
