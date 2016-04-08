@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Bmail | Inbox{% endblock title %}
+
+{% block content%}
+
+                        {% if login %}
+                            <h1>Hello, {{ user.nickname() }}!</h1>
+                            <p>Go check your inbox, send an email or <a href="{{ logout_url }}">sign out</a>!</p>
+                        {% else %}
+                            <h1>Hello, stranger!</h1>
+                            <p>Please, <a href="{{ login_url }}">sign in</a>.</p>
+                        {% endif %}
+
+{% endblock content %}

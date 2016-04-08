@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Bmail | Compose{% endblock title %}
+
+{% block content%}
+
+                        <h1>Compose a message</h1>
+                        <br>
+                        <form action="/compose" method="post">
+                            From: <input name="sender" placeholder="your email">
+                            <br>
+                            To: <input name="recipient" placeholder="recipient's email">
+                            <br><br>
+                            Subject: <input name="subject">
+                            <br><br>
+                            Message: <br>
+                            <textarea name="message" rows="10" cols="100" required></textarea>
+                            <br><br>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+
+{% endblock content %}

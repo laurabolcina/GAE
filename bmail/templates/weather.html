@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Bmail | Weather{% endblock title %}
+
+{% block content%}
+
+    <h1>Weather in {{ data.name }}</h1>
+    <br>
+    <p>Description: {{ data.weather[0].description }}</p>
+    <p>Current temperature: {{ data.main.temp }} °C</p>
+
+{% endblock content %}
